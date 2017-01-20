@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Waves
+    uniqueID: 3343852111
+    locked: 0
+  - name: Beach
+    uniqueID: 3151722595
+    locked: 0
+  - name: Humans
+    uniqueID: 1290863261
+    locked: 0
