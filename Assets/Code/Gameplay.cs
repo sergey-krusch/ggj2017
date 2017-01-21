@@ -11,6 +11,11 @@ public class Gameplay: MonoBehaviour
 
     public void Awake()
     {
+        if (SceneManager.sceneCount == 1)
+        {
+            Session.CurrentLevel = 1;
+            SceneManager.LoadScene("Levels/01", LoadSceneMode.Additive);
+        }
         Session.Score = 0;
         foreach (var human in FindObjectsOfType<Human>())
         {
