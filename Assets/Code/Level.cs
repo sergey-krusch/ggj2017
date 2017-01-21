@@ -17,6 +17,8 @@ public class Level : MonoBehaviour
 
     public void Awake()
     {
+        Destroy(GameObject.Find("Left Margin"));
+        Destroy(GameObject.Find("Right Margin"));
         Destroy(GameObject.Find("Main Camera"));
         if (SceneManager.sceneCount == 1)
         {

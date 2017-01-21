@@ -50,3 +50,6 @@ TagManager:
   - name: Humans
     uniqueID: 1290863261
     locked: 0
+  - name: Overlays
+    uniqueID: 3414603985
+    locked: 0
