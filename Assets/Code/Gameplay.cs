@@ -5,6 +5,11 @@ public class Gameplay: MonoBehaviour
 {
     public RoundWaveSpawner WaveSpawner;
 
+    public void Awake()
+    {
+        Session.Score = 0;
+    }
+
     public void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -16,6 +21,6 @@ public class Gameplay: MonoBehaviour
 
     public void RestartClick()
     {
-        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadScene("GameOver");
     }
 }
