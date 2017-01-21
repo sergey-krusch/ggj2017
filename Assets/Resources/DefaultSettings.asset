@@ -13,12 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseSavedPoints: 10
   BaseDrownedPoints: 0
-  MaxHumanVelocity: 100
+  MaxHumanVelocity: 0.5
   RoundWave:
-    MinSpawnInterval: 0.5
-    Force: 15
-    MaxRadius: 1
-    Lifetime: 1
+    MinSpawnInterval: 0.7
+    Force: 20
+    MaxRadius: 2
+    Lifetime: 2
     Color:
       key0:
         serializedVersion: 2
