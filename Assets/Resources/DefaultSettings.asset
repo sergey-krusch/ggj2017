@@ -11,6 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0423db77e8de03d479bcf2f02ba2b94a, type: 3}
   m_Name: DefaultSettings
   m_EditorClassIdentifier: 
+  BaseSavedPoints: 10
+  BaseDrownedPoints: 0
   RoundWave:
     MinSpawnInterval: 1
     Force: 20

@@ -7,6 +7,8 @@ namespace Configuration
     {
         public const string ResourcePath = "DefaultSettings";
 
+        public int BaseSavedPoints;
+        public int BaseDrownedPoints;
         public RoundWaveConfig RoundWave;
         public LineWaveConfig LineWave;
         public bool DeveloperMode;
