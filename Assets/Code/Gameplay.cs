@@ -8,6 +8,7 @@ public class Gameplay: MonoBehaviour
     public RoundWaveSpawner WaveSpawner;
     public Transform HumanContainer;
     public Text ScoreLabel;
+    private int humansLeft;
 
     public void Awake()
     {
@@ -16,6 +17,7 @@ public class Gameplay: MonoBehaviour
         {
             human.Saved += HumanSaved;
             human.Drowned += HumanDrowned;
+            ++humansLeft;
         }
     }
 
@@ -31,16 +33,25 @@ public class Gameplay: MonoBehaviour
 
     public void RestartClick()
     {
-        SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("Gameplay");
     }
 
     private void HumanSaved(int multiplier)
     {
         Session.Score += multiplier * Root.Instance.BaseSavedPoints;
+        ExtractHuman();
     }
 
     private void HumanDrowned()
     {
         Session.Score -= Root.Instance.BaseDrownedPoints;
+        ExtractHuman();
+    }
+
+    private void ExtractHuman()
+    {
+        --humansLeft;
+        if (humansLeft == 0)
+            SceneManager.LoadScene("GameOver");
     }
 }
