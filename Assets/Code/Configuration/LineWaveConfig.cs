@@ -7,6 +7,5 @@ namespace Configuration
     public class LineWaveConfig
     {
         public float Force;
-        public float SpawnInterval;
     }
 }

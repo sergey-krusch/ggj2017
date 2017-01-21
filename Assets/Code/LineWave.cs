@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LineWave: MonoBehaviour
 {
-    public Vector2 Direction;
+    public float Speed;
     public Vector2 TerminatePosition;
     private Vector2 initialTerminateDelta;
 
@@ -21,16 +21,14 @@ public class LineWave: MonoBehaviour
 
     public void FixedUpdate()
     {
-        Vector2 p = transform.position;
-        p += Direction * Time.fixedDeltaTime;
-        transform.position = p;
+        transform.position += transform.up * Speed * Time.fixedDeltaTime;
     }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<Human>() == null)
             return;
-        var direction = Direction.normalized;
+        var direction = transform.up.normalized;
         var force = Root.Instance.LineWave.Force;
         other.attachedRigidbody.AddForce(force * direction);
     }
