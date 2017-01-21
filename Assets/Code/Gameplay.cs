@@ -13,7 +13,7 @@ public class Gameplay: MonoBehaviour
     public void Awake()
     {
         Session.Score = 0;
-        foreach (var human in HumanContainer.GetComponentsInChildren<Human>())
+        foreach (var human in FindObjectsOfType<Human>())
         {
             human.Saved += HumanSaved;
             human.Drowned += HumanDrowned;
