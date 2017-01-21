@@ -1,4 +1,5 @@
 using System;
+using Configuration;
 using UnityEngine;
 
 public class Human: MonoBehaviour
@@ -13,6 +14,12 @@ public class Human: MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
         renderer = GetComponent<SpriteRenderer>();
+    }
+
+    public void FixedUpdate()
+    {
+        if (rigidbody.velocity.magnitude > Root.Instance.MaxHumanVelocity)
+            rigidbody.velocity = Root.Instance.MaxHumanVelocity * rigidbody.velocity.normalized;
     }
 
     public void OnTriggerEnter2D(Collider2D other)

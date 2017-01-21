@@ -9,6 +9,7 @@ namespace Configuration
 
         public int BaseSavedPoints;
         public int BaseDrownedPoints;
+        public float MaxHumanVelocity;
         public RoundWaveConfig RoundWave;
         public LineWaveConfig LineWave;
         public bool DeveloperMode;

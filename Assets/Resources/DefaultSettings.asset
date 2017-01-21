@@ -13,6 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseSavedPoints: 10
   BaseDrownedPoints: 0
+  MaxHumanVelocity: 100
   RoundWave:
     MinSpawnInterval: 1
     Force: 20
@@ -63,5 +64,4 @@ MonoBehaviour:
       m_NumAlphaKeys: 4
   LineWave:
     Force: 15
-    SpawnInterval: 1
   DeveloperMode: 0
