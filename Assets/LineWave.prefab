@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: 0, y: 1.25}
-  Force: 1
+  Force: 20
 --- !u!212 &212000012734694200
 SpriteRenderer:
   m_ObjectHideFlags: 1

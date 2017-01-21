@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GrowthSpeed: 2
-  Force: 1
+  Force: 20
   TerminationRadius: 0
 --- !u!212 &212000014292307920
 SpriteRenderer:
