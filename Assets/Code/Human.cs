@@ -6,6 +6,7 @@ public class Human: MonoBehaviour
 {
     private new Rigidbody2D rigidbody;
     private new SpriteRenderer renderer;
+    private float angularSpeed;
 
     public Action<int> Saved;
     public Action Drowned;
@@ -14,12 +15,31 @@ public class Human: MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
         renderer = GetComponent<SpriteRenderer>();
+        angularSpeed = 0.0f;
     }
 
     public void FixedUpdate()
     {
         if (rigidbody.velocity.magnitude > Root.Instance.MaxHumanVelocity)
             rigidbody.velocity = Root.Instance.MaxHumanVelocity * rigidbody.velocity.normalized;
+    }
+
+    public void Update()
+    {
+        var a = transform.localRotation.eulerAngles.z;
+        a += angularSpeed * Time.deltaTime;
+        transform.localRotation = Quaternion.Euler(0.0f, 0.0f, a);
+    }
+
+    public void HitByWave()
+    {
+        var config = Root.Instance;
+        var n = UnityEngine.Random.Range(-1.0f, 1.0f);
+        angularSpeed += n * config.MaxWaveAngularSpeedAddition;
+        angularSpeed = Mathf.Clamp(
+            angularSpeed,
+            -config.MaxAngularSpeed,
+            config.MaxAngularSpeed);
     }
 
     public void OnTriggerEnter2D(Collider2D other)

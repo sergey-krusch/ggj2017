@@ -30,12 +30,13 @@ public class RoundWave: MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        bool isHuman = other.GetComponent<Human>() != null;
-        if (!isHuman)
+        var human = other.GetComponent<Human>();
+        if (human == null)
             return;
         Vector2 waveCenter = transform.position;
         var otherPosition = other.attachedRigidbody.position;
         var direction = (otherPosition - waveCenter).normalized;
         other.attachedRigidbody.AddForce(config.Force * direction);
+        human.HitByWave();
     }
 }

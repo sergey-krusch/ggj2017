@@ -26,11 +26,13 @@ public class LineWave: MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<Human>() == null)
+        var human = other.GetComponent<Human>();
+        if (human == null)
             return;
         var direction = transform.up.normalized;
         var force = Root.Instance.LineWave.Force;
         other.attachedRigidbody.AddForce(force * direction);
+        human.HitByWave();
     }
 
 }

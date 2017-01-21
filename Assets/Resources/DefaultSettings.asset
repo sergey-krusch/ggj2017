@@ -14,6 +14,8 @@ MonoBehaviour:
   BaseSavedPoints: 10
   BaseDrownedPoints: 0
   MaxHumanVelocity: 0.5
+  MaxWaveAngularSpeedAddition: 50
+  MaxAngularSpeed: 15
   RoundWave:
     MinSpawnInterval: 0.7
     Force: 20

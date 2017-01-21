@@ -17,6 +17,10 @@ public class Gameplay: MonoBehaviour
             SceneManager.LoadScene("Levels/01", LoadSceneMode.Additive);
         }
         Session.Score = 0;
+    }
+
+    public void Start()
+    {
         foreach (var human in FindObjectsOfType<Human>())
         {
             human.Saved += HumanSaved;
