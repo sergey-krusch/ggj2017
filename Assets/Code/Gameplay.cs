@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Gameplay: MonoBehaviour
 {
     public RoundWaveSpawner WaveSpawner;
-    public Transform HumanContainer;
     public Text ScoreLabel;
     private int humansLeft;
 
