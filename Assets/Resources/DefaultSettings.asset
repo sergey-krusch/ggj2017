@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Name: DefaultSettings
   m_EditorClassIdentifier: 
   RoundWave:
+    MinSpawnInterval: 1
     Force: 20
     MaxRadius: 3
     Lifetime: 2
     Color:
       key0:
         serializedVersion: 2
-        rgba: 5898496
+        rgba: 16777215
       key1:
         serializedVersion: 2
-        rgba: 3487367168
+        rgba: 3489653067
       key2:
         serializedVersion: 2
         rgba: 956301312
@@ -59,5 +60,6 @@ MonoBehaviour:
       m_NumColorKeys: 2
       m_NumAlphaKeys: 4
   LineWave:
-    Force: 20
+    Force: 15
+    SpawnInterval: 1
   DeveloperMode: 0

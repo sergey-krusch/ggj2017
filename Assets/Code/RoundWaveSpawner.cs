@@ -1,8 +1,8 @@
+using Configuration;
 using UnityEngine;
 
 public class RoundWaveSpawner: MonoBehaviour
 {
-    public float MinSpawnInterval;
     public Transform Holder;
     public GameObject Prefab;
 
@@ -17,7 +17,7 @@ public class RoundWaveSpawner: MonoBehaviour
     {
         if (timeRemainingToNextSpawn > 0.0f)
             return;
-        timeRemainingToNextSpawn = MinSpawnInterval;
+        timeRemainingToNextSpawn = Root.Instance.RoundWave.MinSpawnInterval;
         var obj = Instantiate(Prefab);
         obj.transform.SetParent(Holder, false);
         obj.transform.position = point;
