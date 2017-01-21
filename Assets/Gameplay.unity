@@ -302,7 +302,6 @@ MonoBehaviour:
   MinSpawnInterval: 0.2
   Holder: {fileID: 190373262}
   Prefab: {fileID: 1000013295624454, guid: 728479859d66daa40a0e83127e6f19e1, type: 2}
-  terminationRadius: 0
 --- !u!4 &190373262
 Transform:
   m_ObjectHideFlags: 0
@@ -1309,7 +1308,7 @@ GameObject:
   - 4: {fileID: 1961096389}
   - 114: {fileID: 1961096388}
   m_Layer: 0
-  m_Name: LineWaveSpawner
+  m_Name: LineWavesSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1328,6 +1327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnInterval: 1
   SpawnPosition: {x: 0, y: -8}
+  TerminatePosition: {x: 0, y: 8}
   Holder: {fileID: 1961096389}
   Prefab: {fileID: 1000013878903348, guid: 847eda7724aabbb4dbb1f72541c6a8f1, type: 2}
 --- !u!4 &1961096389
@@ -1336,7 +1336,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1961096387}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
