@@ -6,7 +6,7 @@ public class GameOver: MonoBehaviour
 {
     public Text ScoreLabel;
 
-    public void OnAwake()
+    public void Awake()
     {
         ScoreLabel.text = string.Format(ScoreLabel.text, Session.Score);
     }
