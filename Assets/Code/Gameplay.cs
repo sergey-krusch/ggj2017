@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Gameplay: MonoBehaviour
 {
@@ -11,5 +12,10 @@ public class Gameplay: MonoBehaviour
             var point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             WaveSpawner.Spawn(point);
         }
+    }
+
+    public void RestartClick()
+    {
+        SceneManager.LoadScene("Gameplay");
     }
 }
