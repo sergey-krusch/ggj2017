@@ -21,6 +21,5 @@ public class RoundWaveSpawner: MonoBehaviour
         var obj = Instantiate(Prefab);
         obj.transform.SetParent(Holder, false);
         obj.transform.position = point;
-        var wave = obj.GetComponent<RoundWave>();
     }
 }
