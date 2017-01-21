@@ -1,10 +1,10 @@
+using Configuration;
 using UnityEngine;
 
 public class LineWave: MonoBehaviour
 {
     public Vector2 Direction;
     public Vector2 TerminatePosition;
-    public float Force;
     private Vector2 initialTerminateDelta;
 
     public void Start()
@@ -31,7 +31,8 @@ public class LineWave: MonoBehaviour
         if (other.GetComponent<Human>() == null)
             return;
         var direction = Direction.normalized;
-        other.attachedRigidbody.AddForce(Force * direction);
+        var force = Root.Instance.LineWave.Force;
+        other.attachedRigidbody.AddForce(force * direction);
     }
 
 }

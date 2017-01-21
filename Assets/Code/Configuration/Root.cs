@@ -8,6 +8,7 @@ namespace Configuration
         public const string ResourcePath = "DefaultSettings";
 
         public RoundWaveConfig RoundWave;
+        public LineWaveConfig LineWave;
         public bool DeveloperMode;
 
         private static Root instance;

@@ -58,4 +58,6 @@ MonoBehaviour:
       atime7: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 4
+  LineWave:
+    Force: 20
   DeveloperMode: 0
