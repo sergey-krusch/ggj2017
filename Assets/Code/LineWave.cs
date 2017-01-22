@@ -21,7 +21,12 @@ public class LineWave: MonoBehaviour
 
     public void FixedUpdate()
     {
-        transform.position += transform.up * Speed * Time.fixedDeltaTime;
+        Rewind(Time.fixedDeltaTime);
+    }
+
+    public void Rewind(float deltaTime)
+    {
+        transform.position += transform.up * Speed * deltaTime;
     }
 
     public void OnTriggerEnter2D(Collider2D other)

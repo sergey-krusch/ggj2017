@@ -766,13 +766,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c859d1c6d2d01bb408fcd3d06e896f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RewindTime: 20
   SpawnInterval: 1
   SpawnPosition: {x: 0, y: -8}
   SpawnPoisitionOffset: {x: 1, y: 0}
   TerminatePosition: {x: 0, y: 8}
   Holder: {fileID: 1961096389}
   Prefab: {fileID: 1000012573651846, guid: 847eda7724aabbb4dbb1f72541c6a8f1, type: 2}
-  TimeRemainingToNextSpawn: 0
 --- !u!4 &1961096389
 Transform:
   m_ObjectHideFlags: 0

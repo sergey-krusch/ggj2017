@@ -3,29 +3,31 @@ using UnityEngine;
 
 public class LineWaveSpawner: MonoBehaviour
 {
+    public float RewindTime;
     public float SpawnInterval;
     public Vector2 SpawnPosition;
     public Vector2 SpawnPoisitionOffset;
     public Vector2 TerminatePosition;
     public Transform Holder;
     public GameObject Prefab;
-    public float TimeRemainingToNextSpawn;
+    private float timeRemainingToNextSpawn;
 
     public void Awake()
     {
+        Rewind(RewindTime);
     }
 
     public void FixedUpdate()
     {
-        TimeRemainingToNextSpawn -= Time.fixedDeltaTime;
-        if (TimeRemainingToNextSpawn <= 0.0f)
+        timeRemainingToNextSpawn -= Time.fixedDeltaTime;
+        if (timeRemainingToNextSpawn <= 0.0f)
         {
-            TimeRemainingToNextSpawn = SpawnInterval;
+            timeRemainingToNextSpawn = SpawnInterval;
             Spawn();
         }
     }
 
-    public void Spawn()
+    private LineWave Spawn()
     {
         var obj = Instantiate(Prefab);
         obj.transform.SetParent(Holder, false);
@@ -33,5 +35,18 @@ public class LineWaveSpawner: MonoBehaviour
         obj.transform.position = SpawnPosition + offsetAmount * SpawnPoisitionOffset;
         var lineWave = obj.GetComponent<LineWave>();
         lineWave.TerminatePosition = TerminatePosition;
+        return lineWave;
+    }
+
+    private void Rewind(float deltaTime)
+    {
+        timeRemainingToNextSpawn -= deltaTime;
+        while (timeRemainingToNextSpawn <= 0.0f)
+        {
+            timeRemainingToNextSpawn += SpawnInterval;
+            var wave = Spawn();
+            wave.Rewind(deltaTime);
+            deltaTime -= SpawnInterval;
+        }
     }
 }
