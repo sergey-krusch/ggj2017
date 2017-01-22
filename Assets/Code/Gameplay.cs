@@ -27,6 +27,7 @@ public class Gameplay: MonoBehaviour
         {
             human.Saved += HumanSaved;
             human.Drowned += HumanDrowned;
+            human.Destroyed += ExtractHuman;
             ++humansLeft;
         }
     }
@@ -58,13 +59,11 @@ public class Gameplay: MonoBehaviour
     private void HumanSaved(int multiplier)
     {
         Session.Score += multiplier * Root.Instance.BaseSavedPoints;
-        ExtractHuman();
     }
 
     private void HumanDrowned()
     {
         Session.Score -= Root.Instance.BaseDrownedPoints;
-        ExtractHuman();
     }
 
     private void ExtractHuman()

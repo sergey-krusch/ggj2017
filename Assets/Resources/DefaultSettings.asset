@@ -68,4 +68,5 @@ MonoBehaviour:
     MaxVelocity: 0.5
     MaxAngularVelocityChange: 50
     MaxAngularVelocity: 15
+    SavingSpeed: 0.4
   DeveloperMode: 1

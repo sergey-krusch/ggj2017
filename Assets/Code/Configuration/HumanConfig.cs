@@ -8,5 +8,6 @@ namespace Configuration
         public float MaxVelocity;
         public float MaxAngularVelocityChange;
         public float MaxAngularVelocity;
+        public float SavingSpeed;
     }
 }
