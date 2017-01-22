@@ -13,9 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseSavedPoints: 10
   BaseDrownedPoints: 0
-  MaxHumanVelocity: 0.5
-  MaxWaveAngularSpeedAddition: 50
-  MaxAngularSpeed: 15
   RoundWave:
     MinSpawnInterval: 0.7
     Force: 20
@@ -66,4 +63,8 @@ MonoBehaviour:
       m_NumAlphaKeys: 4
   LineWave:
     Force: 12
+  Human:
+    MaxVelocity: 0.5
+    MaxAngularVelocityChange: 50
+    MaxAngularVelocity: 15
   DeveloperMode: 0
