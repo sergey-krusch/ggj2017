@@ -7,6 +7,7 @@ public class Gameplay: MonoBehaviour
 {
     public RoundWaveSpawner WaveSpawner;
     public Text ScoreLabel;
+    public Text LevelNumberLabel;
     private int humansLeft;
 
     public void Awake()
@@ -21,6 +22,7 @@ public class Gameplay: MonoBehaviour
 
     public void Start()
     {
+        LevelNumberLabel.text = string.Format(LevelNumberLabel.text, Session.CurrentLevel);
         foreach (var human in FindObjectsOfType<Human>())
         {
             human.Saved += HumanSaved;
@@ -37,11 +39,20 @@ public class Gameplay: MonoBehaviour
             var point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             WaveSpawner.Spawn(point);
         }
+        HandleDeveloperInput();
     }
 
     public void RestartClick()
     {
-        SceneManager.LoadScene("Gameplay");
+        Level.Load(1);
+    }
+
+    private void HandleDeveloperInput()
+    {
+        if (!Root.Instance.DeveloperMode)
+            return;
+        if (Input.GetKeyDown(KeyCode.N))
+            NextLevel();
     }
 
     private void HumanSaved(int multiplier)
@@ -60,6 +71,17 @@ public class Gameplay: MonoBehaviour
     {
         --humansLeft;
         if (humansLeft == 0)
+            NextLevel();
+    }
+
+    private void NextLevel()
+    {
+        if (Session.CurrentLevel >= Root.Instance.LevelCount)
             SceneManager.LoadScene("GameOver");
+        else
+        {
+            ++Session.CurrentLevel;
+            Level.LoadCurrent();
+        }
     }
 }

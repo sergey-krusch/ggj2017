@@ -7,6 +7,7 @@ namespace Configuration
     {
         public const string ResourcePath = "DefaultSettings";
 
+        public int LevelCount;
         public int BaseSavedPoints;
         public int BaseDrownedPoints;
         public RoundWaveConfig RoundWave;

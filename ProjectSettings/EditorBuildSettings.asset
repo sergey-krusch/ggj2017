@@ -11,3 +11,9 @@ EditorBuildSettings:
     path: Assets/GameOver.unity
   - enabled: 1
     path: Assets/Levels/01.unity
+  - enabled: 1
+    path: Assets/Levels/02.unity
+  - enabled: 1
+    path: Assets/Levels/03.unity
+  - enabled: 1
+    path: Assets/Levels/04.unity

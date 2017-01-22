@@ -13,6 +13,6 @@ public class GameOver: MonoBehaviour
 
     public void RestartClick()
     {
-        SceneManager.LoadScene("Gameplay");
+        Level.Load(1);
     }
 }

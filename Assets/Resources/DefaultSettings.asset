@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0423db77e8de03d479bcf2f02ba2b94a, type: 3}
   m_Name: DefaultSettings
   m_EditorClassIdentifier: 
+  LevelCount: 4
   BaseSavedPoints: 10
   BaseDrownedPoints: 0
   RoundWave:
@@ -67,4 +68,4 @@ MonoBehaviour:
     MaxVelocity: 0.5
     MaxAngularVelocityChange: 50
     MaxAngularVelocity: 15
-  DeveloperMode: 0
+  DeveloperMode: 1
